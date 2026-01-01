@@ -8,6 +8,7 @@ import {
   useTransform,
   motion,
   AnimatePresence,
+  Variants,
 } from "framer-motion";
 
 const Nav = () => {
@@ -21,6 +22,7 @@ const Nav = () => {
   const menuLinks = [
     { href: "/", label: "Home" },
     { href: "/books", label: "Books" },
+    { href: "/search", label: "Search" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
@@ -44,7 +46,7 @@ const Nav = () => {
     ["1px solid rgba(0,0,0,0)", "1px solid rgba(0,0,0,0.05)"]
   );
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       clipPath: "circle(0px at calc(100% - 36px) 36px)",
       transition: {
@@ -64,7 +66,7 @@ const Nav = () => {
     },
   };
 
-  const listVariants = {
+  const listVariants: Variants = {
     open: {
       transition: {
         staggerChildren: 0.07,
@@ -79,7 +81,7 @@ const Nav = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     open: {
       y: 0,
       opacity: 1,
@@ -96,7 +98,7 @@ const Nav = () => {
     },
   };
 
-  const pathVariants = {
+  const pathVariants: Variants = {
     closed: {
       d: "M 2 2.5 L 14 2.5",
       transition: { duration: 0.3 },
@@ -107,7 +109,7 @@ const Nav = () => {
     },
   };
 
-  const pathVariants2 = {
+  const pathVariants2: Variants = {
     closed: {
       d: "M 2 8 L 14 8",
       opacity: 1,
@@ -120,7 +122,7 @@ const Nav = () => {
     },
   };
 
-  const pathVariants3 = {
+  const pathVariants3: Variants = {
     closed: {
       d: "M 2 13.5 L 14 13.5",
       transition: { duration: 0.3 },
@@ -139,9 +141,9 @@ const Nav = () => {
       >
         <div className="flex items-center gap-3">
           <Image src={"/logo.svg"} alt="logo" width={40} height={40} />
-          <p className="text-3xl text-black">|</p>
+          <hr className="border border-black h-10" />
           <div>
-            <h1 className="text-lg font-bold text-black font-raleway">
+            <p className="text-lg font-bold text-black font-raleway">
               The{" "}
               <span className="font-instrument-serif italic text-primary">
                 Legal{" "}
@@ -151,7 +153,7 @@ const Nav = () => {
                 Eagle{" "}
               </span>{" "}
               Memoirs
-            </h1>
+            </p>
           </div>
         </div>
 
